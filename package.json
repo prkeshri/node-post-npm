@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/prkeshri/node-post-npm/issues"
   },
-  "homepage": "https://github.com/prkeshri/node-post-npm#readme"
+  "homepage": "https://github.com/prkeshri/node-post-npm#readme",
+  "dependencies": {
+    "unique-hash": "^2.6.0"
+  }
 }
