@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const child_process= require('child_process');
 const path = require('path');
 const post_npm_script = path.join(__dirname, 'post-npm.js');

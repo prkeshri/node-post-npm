@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { spawn } = require('child_process');
 const [node, me, npmid, ...args] = process.argv[2];
 let i;
