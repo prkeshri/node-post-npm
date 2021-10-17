@@ -15,7 +15,7 @@ while(cmd[0] === '-') {
 }
 let tmp;
 if(flagargs[0] === '-once') {
-    tmp = path.join(os.tmpdir(), uniqueHash(args.join(' ')));
+    tmp = path.join(os.tmpdir(), "post-npm-" + uniqueHash(args.join(' ')));
     if(fs.existsSync(tmp)) {
         return;
     }
