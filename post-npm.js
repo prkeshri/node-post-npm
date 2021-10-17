@@ -1,15 +1,23 @@
 #!/usr/bin/env node
-const { spawn } = require('child_process');
-const [node, me, npmid, ...args] = process.argv[2];
+const { spawn, exec } = require('child_process');
+const [node, me, npmid, cmd, ...args] = process.argv;
 let i;
+let finished = false;
 p = _ => {
-    let k = (`kill -0 ${npmid}`);
+    let k = exec(`kill -0 ${npmid}`);
     k.on('close', code => {
         if(code !== 0) {
+            if(finished) {
+                return;
+            }
+            finished = true;
             clearImmediate(i);
-            spawn(args.join(' '), {
-                stdio: [ 'ignore', process.stdout, 'ignore' ], 
-            });
+            try {
+                spawn(cmd, args, {
+                    stdio: [ 'ignore', process.stdout, 'ignore' ], 
+                });
+            } catch (e) {
+            }
         }
     });}
 
