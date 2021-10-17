@@ -24,7 +24,8 @@ npm install post-npm
 
 ## Use:
 1. Add in dependencies
-2. In postinstall script, add: post-npm &lt;script to execute&gt; &lt;script arguments&gt;
+2. In postinstall script, add: post-npm &lt;script to execute&gt; \[-once\] &lt;script arguments&gt;
+3. In case of -once, multiple calls with same scripts will be executed only once!
 ## Author
 
 👤 **Praveen Ranjan Keshri**
