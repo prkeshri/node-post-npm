@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 const { spawn, exec } = require('child_process');
-const [node, me, npmid, cmd, ...args] = process.argv;
+let [node, me, npmid, cmd, ...args] = process.argv;
+const path = require('path');
 const os = require('os');
 const fs = require('fs');
-const uniqueHash = require("unique-hash");
+let uniqueHash = require("unique-hash");
+    uniqueHash = uniqueHash.default || uniqueHash;
 let i;
 let finished = false;
 const flagargs = [];
-while(args[0] && args[0][0] === '-') {
-    flagargs.push(args.shift());
+while(cmd[0] === '-') {
+    flagargs.push(cmd);
+    cmd = args.shift();
 }
-
 let tmp;
 if(flagargs[0] === '-once') {
     tmp = path.join(os.tmpdir(), uniqueHash(args.join(' ')));
