@@ -31,6 +31,7 @@ p = _ => {
             finished = true;
             clearImmediate(i);
             try {
+                console.log();
                 spawn(cmd, args, {
                     stdio: [ 'ignore', process.stdout, 'ignore' ], 
                 });
