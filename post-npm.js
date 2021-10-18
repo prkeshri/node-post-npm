@@ -16,7 +16,6 @@ while(cmd[0] === '-') {
 let tmp;
 if(flagargs[0] === '-once') {
     tmp = path.join(os.tmpdir(), "post-npm-" + uniqueHash(cmd + ' ' + args.join(' ')));
-    console.log({tmp})
     if(fs.existsSync(tmp)) {
         return;
     }

@@ -1,6 +1,6 @@
 {
   "name": "post-npm",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Script to execute post all the npm installs are complete!",
   "main": "",
   "bin": {
